@@ -1,0 +1,10 @@
+<ul class="items"  *ngFor = "let data of httpdata">
+   
+    <li> <span class="badge"> {{data.id}} </span>Denomination : {{data.Denomination}}</li> 
+    <li> Secteur d'activite : {{data.SecteurActivite}}</li> 
+    <li>Siege : {{data.Siege}} </li>
+    <li>Systeme Juridique : {{data.Juridique}}</li>
+    <li>Registre de Commerce : {{data.RegistreCommerce}}</li>
+</ul>
+
+<div> <button (click)="gotoEntreprise()">Retour</button> </div>
