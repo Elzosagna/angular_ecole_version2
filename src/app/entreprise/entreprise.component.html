@@ -1,8 +1,14 @@
-<ul class="items" *ngFor = "let data of httpdata" >
-    <li *ngIf="data.SecteurActivite ==='COMMERCE'|paginate: { itemsPerPage: 10, currentPage: p } "  (click)="onSelect(data)"  [class.selected]="isSelected(data)" >
-   <span class="badge"> {{data.id}} </span> Denomination : {{data.Denomination}}  Secteur d'activite : {{data.SecteurActivite}}</li> 
-    
-</ul>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
-<!-- |paginate: { itemsPerPage: 10, currentPage: p }; let i = index -->
+<div class="container">
+  <div class="row">
+    <section class="col-sm-6">
+      <div class="list_image">
+        <ul>
+          <li (click)="onSelect(data)" *ngFor = "let data of httpdata">
+            <a>{{ data.libelle_pays }} / {{ data.ville }} / {{ data.ENTStructureNomCourant }} </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>

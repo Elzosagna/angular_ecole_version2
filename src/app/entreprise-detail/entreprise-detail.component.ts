@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
@@ -11,27 +11,27 @@ export class EntrepriseDetailComponent implements OnInit {
 
   public entrepriseId;
   constructor(private http: HttpClient,private route: ActivatedRoute,private router: Router ) { }
-  
+
   httpdata;
   ngOnInit() {
-    this.http.get("https://babacars.promo-21.codeur.online/symfony/public/api/entreprises.json")
+    this.http.get("http://elhadjiibrahimas.promo-21.codeur.online/ecole/src/app/api/api.php")
     .subscribe((data) => this.displaydata(data));
 
-   
-    this.route.paramMap.subscribe((params:ParamMap) =>{ 
+
+    this.route.paramMap.subscribe((params:ParamMap) =>{
          let id = parseInt(params.get('id'));
             this.entrepriseId=id;
       });
   }
 
-  
+
   gotoEntreprise() {
     let selectedId = this.entrepriseId ? this.entrepriseId : null;
-    //this.router.navigate(['/departments', {id: selectedId}]);   
+    //this.router.navigate(['/departments', {id: selectedId}]);
     this.router.navigate(['../', { id: selectedId }], { relativeTo: this.route });
   }
   displaydata(data) {this.httpdata = Array.of( data[this.entrepriseId-1]);
-  
+
   }
 
   goPrevious() {

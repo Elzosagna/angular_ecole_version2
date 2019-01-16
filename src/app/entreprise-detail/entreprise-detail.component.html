@@ -1,10 +1,16 @@
 <ul class="items"  *ngFor = "let data of httpdata">
-   
-    <li> <span class="badge"> {{data.id}} </span>Denomination : {{data.Denomination}}</li> 
-    <li> Secteur d'activite : {{data.SecteurActivite}}</li> 
-    <li>Siege : {{data.Siege}} </li>
-    <li>Systeme Juridique : {{data.Juridique}}</li>
-    <li>Registre de Commerce : {{data.RegistreCommerce}}</li>
+
+
+    <li>Pays : {{data.libelle_pays}}</li>
+    <li>Code pays : {{data.code_pays}}</li>
+    <li>Ville : {{data.ville}}</li>
+    <li>Nom de l'établissement : {{data.ENTStructureNomCourant}}</li>
+    <li>Adresse : {{data.adresse}}</li>
+    <li>E-mail : {{data.ENTStructureEmail}}</li>
+    <li>Site web : {{data.ENTStructureSiteWeb}} </li>
+    <li>latitude : {{data.latitude}}</li>
+    <li>longitude : {{data.longitude}}</li>
+
 </ul>
 
 <div> <button (click)="gotoEntreprise()">Retour</button> </div>
